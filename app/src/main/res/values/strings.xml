@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BeachCleanupAppV6</string>
+
+    <string name="MAPS_API_KEY">AIzaSyDmhC3NN0SIm0biB_ib3RUOhXZSXtq8Ydo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

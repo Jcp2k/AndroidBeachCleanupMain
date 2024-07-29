@@ -12,41 +12,21 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import beach.cleanup.app.beachcleanupappv6.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
 
-
-
-
-
-
-
-
-
-
-
-    private GoogleMap myMap;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate());
+        setContentView(binding.getRoot());
 
-        
-        setContentView(R.layout.activity_main);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
+        binding.bottomNavigationView.setBackground(Null)
+
         }
+        private void replaceFragment(Fragment fragment)
+            FragmentManager fragmentManager
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        myMap = googleMap;
-        LatLng wellington = new LatLng(-41.2865, 174.7762);
-        myMap.addMarker(new MarkerOptions().position(wellington).title("Marker in Wellington"));
-        myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(wellington, 10));
-    }
-}

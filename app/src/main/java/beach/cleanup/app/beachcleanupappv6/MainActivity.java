@@ -1,22 +1,21 @@
 package beach.cleanup.app.beachcleanupappv6;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
 import beach.cleanup.app.beachcleanupappv6.databinding.ActivityMainBinding;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,36 +23,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         replaceFragment(new HomeFragment());
-
         binding.bottomNavigationView.setBackground(null);
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
 
-            switch (item.getItemId()) {
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
-                    break;
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-
-
-
-                case R.id.info:
-                    replaceFragment(new HomeFragment());
-                    break;
-
-
-                case R.id.profile:
-                    replaceFragment(new HomeFragment());
-                    break;
+            if (item.getItemId() == R.id.home) {
+                replaceFragment(new HomeFragment());
+                return true;
+            } if (item.getItemId() == R.id.map) {
+                replaceFragment(new MapFragment());
+                return true;
+            }if (item.getItemId() == R.id.info) {
+                replaceFragment(new InformationFragment());
+                return true;
+            }if (item.getItemId() == R.id.profile) {
+                replaceFragment(new ProfileFragment());
+                return true;
             }
-
+            return false;
         });
-
-
-
-
-
-
-        private void replaceFragment(Fragment fragment);
-            FragmentManager fragmentManager = getSupportFragmentManager()
     }
 
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
+    }
+
+}

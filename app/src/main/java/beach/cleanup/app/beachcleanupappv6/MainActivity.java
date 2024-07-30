@@ -20,13 +20,40 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.bottomNavigationView.setBackground(Null)
+        replaceFragment(new HomeFragment());
 
-        }
-        private void replaceFragment(Fragment fragment)
-            FragmentManager fragmentManager
+        binding.bottomNavigationView.setBackground(null);
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+
+            switch (item.getItemId()) {
+                case R.id.home:
+                    replaceFragment(new HomeFragment());
+                    break;
+
+
+
+
+                case R.id.info:
+                    replaceFragment(new HomeFragment());
+                    break;
+
+
+                case R.id.profile:
+                    replaceFragment(new HomeFragment());
+                    break;
+            }
+
+        });
+
+
+
+
+
+
+        private void replaceFragment(Fragment fragment);
+            FragmentManager fragmentManager = getSupportFragmentManager()
     }
 

@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.home) {
                 replaceFragment(new HomeFragment());
                 return true;
-            } if (item.getItemId() == R.id.map) {
+            }else if (item.getItemId() == R.id.map) {
                 replaceFragment(new MapFragment());
                 return true;
-            }if (item.getItemId() == R.id.info) {
+            }else if (item.getItemId() == R.id.info) {
                 replaceFragment(new InformationFragment());
                 return true;
-            }if (item.getItemId() == R.id.profile) {
+            }else if (item.getItemId() == R.id.profile) {
                 replaceFragment(new ProfileFragment());
                 return true;
             }

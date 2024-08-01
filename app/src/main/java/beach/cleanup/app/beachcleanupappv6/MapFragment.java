@@ -3,7 +3,7 @@ package beach.cleanup.app.beachcleanupappv6;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,17 +18,22 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class MapFragment extends Fragment {
-
-    public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
-
+public class MapFragment extends Fragment implements OnMapReadyCallback {
         private GoogleMap myMap;
 
+
         @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.map);
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        @Nullable
+
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_map, container, false);
+        }
+
+
+        @Override
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null) {
                 mapFragment.getMapAsync(this);
             }
@@ -41,5 +46,4 @@ public class MapFragment extends Fragment {
             myMap.addMarker(new MarkerOptions().position(wellington).title("Marker in Wellington"));
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(wellington, 10));
         }
-    }
 }

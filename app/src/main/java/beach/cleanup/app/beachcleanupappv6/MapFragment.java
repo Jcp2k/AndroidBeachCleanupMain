@@ -42,8 +42,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         @Override
         public void onMapReady(@NonNull GoogleMap googleMap) {
             myMap = googleMap;
-            LatLng wellington = new LatLng(-41.2865, 174.7762);
-            myMap.addMarker(new MarkerOptions().position(wellington).title("Marker in Wellington"));
-            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(wellington, 10));
+            LatLng orientalbay = new LatLng(-41.2916, 174.7929);
+            myMap.addMarker(new MarkerOptions().position(orientalbay).title("Oriental Bay"));
+            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orientalbay, 10));
+
+            LatLng lyallbay = new LatLng(-41.3291, 174.7953);
+            myMap.addMarker(new MarkerOptions().position(lyallbay).title("Lyall Bay"));
+            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 10));
         }
 }

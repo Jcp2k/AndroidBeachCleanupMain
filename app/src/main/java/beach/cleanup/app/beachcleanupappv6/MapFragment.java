@@ -44,10 +44,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             myMap = googleMap;
             LatLng orientalbay = new LatLng(-41.2916, 174.7929);
             myMap.addMarker(new MarkerOptions().position(orientalbay).title("Oriental Bay"));
-            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orientalbay, 10));
+            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orientalbay, 15));
 
             LatLng lyallbay = new LatLng(-41.3291, 174.7953);
             myMap.addMarker(new MarkerOptions().position(lyallbay).title("Lyall Bay"));
-            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 10));
+            myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 15));
         }
 }

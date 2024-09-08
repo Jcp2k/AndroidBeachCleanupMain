@@ -27,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="beach.cleanup.app.beachcleanupappv6.SignupActivity" />
 
 
         <meta-data

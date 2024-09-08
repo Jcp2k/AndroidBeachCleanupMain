@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:andriod="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignupActivity"
+    tools:context=".LoginActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:id = "@+id/signup_email" ></EditText>
+                android:id = "@+id/login_email" ></EditText>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,21 +77,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id = "@+id/signup_password"
+                android:id = "@+id/login_password"
                 ></EditText>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:alpha="0.7"
-                android:text="Confirm Password"></TextView>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id = "@+id/signup_confirm"
-                ></EditText>
 
 
             <RelativeLayout
@@ -108,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:text="Log In?"
                     android:layout_alignParentEnd="true"
-                    android:id = "@+id/loginRedirectText"
+                    android:id = "@+id/signupRedirectText"
                     ></TextView>
 
             </RelativeLayout>
@@ -120,8 +109,8 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Signup"
-                android:id="@+id/signup_button">
+                android:text="Login"
+                android:id="@+id/login_button">
 
             </com.google.android.material.button.MaterialButton>
 

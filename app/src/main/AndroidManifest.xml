@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name="beach.cleanup.app.beachcleanupappv6.SignupActivity" />
+        <activity android:name="beach.cleanup.app.beachcleanupappv6.LoginActivity" />
 
 
         <meta-data

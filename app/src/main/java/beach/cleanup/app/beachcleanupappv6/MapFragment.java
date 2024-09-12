@@ -15,6 +15,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
@@ -49,5 +50,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             LatLng lyallbay = new LatLng(-41.3291, 174.7953);
             myMap.addMarker(new MarkerOptions().position(lyallbay).title("Lyall Bay"));
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 15));
+
+            myMap.getUiSettings().setZoomControlsEnabled(true);
+            myMap.setInfoWindowAdapter(new MyInfoWindowAdapter(MapFragment.this));
+
+
+            myMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                @Override
+                public boolean onMarkerClick(@NonNull Marker marker) {
+                    marker.showInfoWindow();
+                    return true;
+                }
+            });
         }
 }

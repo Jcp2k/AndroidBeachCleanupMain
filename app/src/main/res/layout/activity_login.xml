@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:andriod="http://schemas.android.com/apk/res-auto"
     tools:context=".LoginActivity"
     android:background="@color/white">
 
@@ -11,25 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="28dp"
-        >
+        android:padding="28dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Cleaner Coastlines"
-            android:textSize = "50dp"
-            android:textStyle = "bold"
-            android:textColor="@color/black"></TextView>
-
+            android:text="Cleaner Coastlines"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom = "true"
-        android:layout_gravity="center">
-
+        android:layout_gravity="center"
+        app:cardElevation="15dp"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,45 +41,41 @@
                 android:text="Welcome"
                 android:textColor="@color/teal"
                 android:textSize="32sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:text="Please login with your information"></TextView>
+                android:text="Please login with your information" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"></View>
+                android:layout_height="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:text="Email"></TextView>
+                android:text="Email" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:id = "@+id/login_email" ></EditText>
+                android:id="@+id/login_email" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:text="Password"></TextView>
+                android:text="Password" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:id = "@+id/login_password"
-                ></EditText>
-
-
-
+                android:id="@+id/login_password" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -90,35 +84,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Forgot password?"></TextView>
+                    android:text="Forgot password?" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sign Up?"
                     android:layout_alignParentEnd="true"
-                    android:id = "@+id/signupRedirectText"
-                    ></TextView>
-
+                    android:id="@+id/signupRedirectText" />
             </RelativeLayout>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"></View>
+                android:layout_height="20dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Login"
-                android:id="@+id/login_button">
-
-            </com.google.android.material.button.MaterialButton>
-
-
+                android:id="@+id/login_button" />
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 
 </FrameLayout>

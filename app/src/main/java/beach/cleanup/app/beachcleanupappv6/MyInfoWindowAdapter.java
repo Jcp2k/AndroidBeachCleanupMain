@@ -18,7 +18,7 @@ public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
         this.context = context;
     }
 
-    public MyInfoWindowAdapter(MapFragment mapFragment) {
+    {
     }
 
     @Nullable

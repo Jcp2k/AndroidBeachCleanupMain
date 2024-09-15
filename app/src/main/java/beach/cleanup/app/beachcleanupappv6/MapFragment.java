@@ -52,12 +52,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 15));
 
             myMap.getUiSettings().setZoomControlsEnabled(true);
-            myMap.setInfoWindowAdapter(new MyInfoWindowAdapter(MapFragment.this));
+
+
+
+            myMap.setInfoWindowAdapter(new MyInfoWindowAdapter(requireContext()));
 
 
             myMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
-                public boolean onMarkerClick(@NonNull Marker marker) {
+                public boolean onMarkerClick(Marker marker) {
                     marker.showInfoWindow();
                     return true;
                 }

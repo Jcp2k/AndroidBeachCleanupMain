@@ -36,9 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }else if (item.getItemId() == R.id.info) {
                 replaceFragment(new InformationFragment());
                 return true;
-            }else if (item.getItemId() == R.id.profile) {
-                replaceFragment(new ProfileFragment());
-                return true;
             }
             return false;
         });

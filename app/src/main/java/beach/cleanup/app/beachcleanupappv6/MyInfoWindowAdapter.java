@@ -4,9 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.content.Context;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 
@@ -21,15 +18,15 @@ public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     {
     }
 
-    @Nullable
+
     @Override
-    public View getInfoContents(@NonNull Marker marker) {
+    public View getInfoContents(Marker marker) {
         return null;
     }
 
-    @Nullable
+
     @Override
-    public View getInfoWindow(@NonNull Marker marker) {
+    public View getInfoWindow(Marker marker) {
         View infoView = LayoutInflater.from(context).inflate(R.layout.custom_info, null);
         TextView title = infoView.findViewById(R.id.title);
         TextView snipp = infoView.findViewById(R.id.snipp);

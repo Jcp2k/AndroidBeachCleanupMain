@@ -18,7 +18,7 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_signup);
+        setContentView(binding.getRoot());
 
         databaseHelper = new DatabaseHelper(this);
 

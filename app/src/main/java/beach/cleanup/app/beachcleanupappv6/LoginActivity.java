@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot()); // Use View Binding
+        setContentView(binding.getRoot());
 
         databaseHelper = new DatabaseHelper(this);
 

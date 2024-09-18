@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.util.Patterns;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please Enter Email and Password", Toast.LENGTH_SHORT).show();
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    // Check if the email matches the standard email pattern
                 } else if (password.length() < MIN_PASSWORD_LENGTH) {
                     // Check if the password Length meets the min length requirement
                     Toast.makeText(LoginActivity.this, "Please Enter a password 8 Characters Long ", Toast.LENGTH_SHORT).show();

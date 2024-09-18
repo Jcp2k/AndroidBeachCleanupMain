@@ -11,8 +11,18 @@ import beach.cleanup.app.beachcleanupappv6.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Set Bindings for both Activity and Database in which it is connected too
+
     ActivityLoginBinding binding;
     DatabaseHelper databaseHelper;
+
+
+   // Set the Content View and What activity is being inflated.
+
+
+    // Define minimum constant password length
+
+    private static final int MIN_PASSWORD_LENGTH = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please Enter Email and Password", Toast.LENGTH_SHORT).show();
+                } else if (password.length() < MIN_PASSWORD_LENGTH) {
+                    // Check if the password Length meets the min length requirement
+                    Toast.makeText(LoginActivity.this, "Please Enter a password 8 Characters Long ", Toast.LENGTH_SHORT).show();
                 } else {
                     boolean checkCredentials = databaseHelper.checkEmailPassword(email, password);
 

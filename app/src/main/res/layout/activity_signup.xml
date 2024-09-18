@@ -3,24 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:andriod="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SignupActivity"
-    android:background="@color/white">
+    android:background="@drawable/bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal"
+        android:alpha="0.7"/>.
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="28dp"
-        >
+        android:padding="28dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Cleaner Coastlines"
-            android:textSize = "50dp"
-            android:textStyle = "bold"
-            android:textColor="@color/black"></TextView>
+            android:text="Cleaner Coastlines"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
@@ -28,7 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom = "true"
-        android:layout_gravity="center">
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="-15dp"
+        app:cardCornerRadius="20dp">
 
 
         <LinearLayout
@@ -43,7 +51,7 @@
                 android:text="Welcome"
                 android:textColor="@color/teal"
                 android:textSize="32sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,19 +61,19 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"></View>
+                android:layout_height="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:text="Email"></TextView>
+                android:text="Email"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:id="@+id/signup_email" />
+                android:id="@+id/signup_email"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,10 +106,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Forgot password?"></TextView>
 
                 <TextView
                     android:layout_width="wrap_content"

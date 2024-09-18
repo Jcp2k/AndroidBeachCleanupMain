@@ -14,6 +14,12 @@ public class SignupActivity extends AppCompatActivity {
     ActivitySignupBinding binding;
     DatabaseHelper databaseHelper;
 
+    // Define minimum constant password length
+
+    private static final int MIN_PASSWORD_LENGTH = 8;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +29,10 @@ public class SignupActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
 
         binding.signupButton.setOnClickListener(new View.OnClickListener() {
+
+
+
+
             @Override
             public void onClick(View view) {
                 String email = binding.signupEmail.getText().toString();
@@ -31,6 +41,10 @@ public class SignupActivity extends AppCompatActivity {
 
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(SignupActivity.this, "Please Enter Email and Password", Toast.LENGTH_SHORT).show();
+                } else if (password.length() < MIN_PASSWORD_LENGTH) {
+                // Check if the password Length meets the min length requirement
+                Toast.makeText(SignupActivity.this, "Please Enter a password 8 Characters Long ", Toast.LENGTH_SHORT).show();
+
                 } else {
                     if (password.equals(confirmPassword)) {
                         boolean checkUserEmail = databaseHelper.checkEmail(email);

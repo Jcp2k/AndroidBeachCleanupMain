@@ -43,22 +43,35 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         @Override
         public void onMapReady(@NonNull GoogleMap googleMap) {
             myMap = googleMap;
-            LatLng orientalbay = new LatLng(-41.2916, 174.7929);
-            myMap.addMarker(new MarkerOptions().position(orientalbay).title("Oriental Bay"));
+
+            String pollutionStatusOrientalBay = "High";
+            String pollutionStatusLyallBay = "Low";
+
+
+            LatLng orientalbay = new LatLng(-41.2916,  174.7929);
+            Marker orientalbaymarker = myMap.addMarker(new MarkerOptions()
+                    .position(orientalbay)
+                    .title("Oriental Bay")
+                    .snippet(("Pollution Status: " + pollutionStatusOrientalBay)));
+
+            orientalbaymarker.setTag(pollutionStatusOrientalBay);
+
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orientalbay, 15));
 
             LatLng lyallbay = new LatLng(-41.3291, 174.7953);
-            myMap.addMarker(new MarkerOptions().position(lyallbay).title("Lyall Bay"));
+            Marker lyallbaymarker= myMap.addMarker(new MarkerOptions()
+                    .position(lyallbay)
+                    .title("Lyall Bay")
+                    .snippet(("Pollution Status: " + pollutionStatusLyallBay)));
+
+           lyallbaymarker.setTag(pollutionStatusLyallBay);
+
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 15));
 
             myMap.getUiSettings().setZoomControlsEnabled(true);
-
-
-
             myMap.setInfoWindowAdapter(new MyInfoWindowAdapter(requireContext()));
-
-
             myMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
                 @Override
                 public boolean onMarkerClick(Marker marker) {
                     marker.showInfoWindow();

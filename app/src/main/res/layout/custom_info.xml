@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/teal"
     android:padding="10dp"
     >
     
@@ -15,12 +14,13 @@
         android:text = "Title"
         android:id = "@+id/title"
         android:textSize = "20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Snipp"
         android:id = "@+id/snipp"
-        android:layout_marginTop="3dp"/>
+        android:layout_marginTop="3dp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

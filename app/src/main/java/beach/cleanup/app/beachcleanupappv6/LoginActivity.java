@@ -33,12 +33,14 @@ public class LoginActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
+
+        // When button is pressed checks database for valid loginPassword and loginEmail.
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = binding.loginEmail.getText().toString();
                 String password = binding.loginPassword.getText().toString();
-
+                // If passwords/email is empty popup is shown "Please enter Email and Password"
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please Enter Email and Password", Toast.LENGTH_SHORT).show();
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -47,18 +49,23 @@ public class LoginActivity extends AppCompatActivity {
                     // Check if the password Length meets the min length requirement
                     Toast.makeText(LoginActivity.this, "Please Enter a password 8 Characters Long ", Toast.LENGTH_SHORT).show();
                 } else {
+
+                    // If the password and email are valid it intialls the Login Activity displaying "Login Successful" and redirects to MainActivity.
                     boolean checkCredentials = databaseHelper.checkEmailPassword(email, password);
 
                     if (checkCredentials) {
-                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
                     } else {
+                        // If passwords aren't valid the Popup displays "Invalid Credentials"
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
+
+        // When Login text is pressed the intent to start a SignUpactivity is intialized
 
         binding.signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -43,27 +43,27 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         @Override
         public void onMapReady(@NonNull GoogleMap googleMap) {
             myMap = googleMap;
-
+// Set strings for pollutionstatus of both markers.
             String pollutionStatusOrientalBay = "High";
             String pollutionStatusLyallBay = "Low";
 
-
+// Add Marker and Marker settings for Oriental Bay - Polution status string in Snippet
             LatLng orientalbay = new LatLng(-41.2916,  174.7929);
             Marker orientalbaymarker = myMap.addMarker(new MarkerOptions()
                     .position(orientalbay)
                     .title("Oriental Bay")
                     .snippet(("Pollution Status: " + pollutionStatusOrientalBay)));
-
+// Sets the information in the marker to remain as the Pollution status and Zoom settings
             orientalbaymarker.setTag(pollutionStatusOrientalBay);
 
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(orientalbay, 15));
-
+//  // Add Marker and Marker settings for Lyall Bay - Polution status string in Snippet
             LatLng lyallbay = new LatLng(-41.3291, 174.7953);
             Marker lyallbaymarker= myMap.addMarker(new MarkerOptions()
                     .position(lyallbay)
                     .title("Lyall Bay")
                     .snippet(("Pollution Status: " + pollutionStatusLyallBay)));
-
+// Sets the information in the marker to remain as the Pollution status and Zoom settings
            lyallbaymarker.setTag(pollutionStatusLyallBay);
 
             myMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lyallbay, 15));

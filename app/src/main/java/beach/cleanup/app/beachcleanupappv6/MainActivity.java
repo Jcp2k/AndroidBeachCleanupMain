@@ -4,7 +4,6 @@ package beach.cleanup.app.beachcleanupappv6;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import beach.cleanup.app.beachcleanupappv6.databinding.ActivityMainBinding;
@@ -17,13 +16,20 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     @Override
+
+    // Sets Layout for contentView to be the Navigation Bar
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        // Makes intial fragment that is displayed to the user in the background the Home page
         replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setBackground(null);
+
+        // When logos are pressed in the navigation bar it switches the fragment.
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 

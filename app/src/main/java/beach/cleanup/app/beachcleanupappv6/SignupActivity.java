@@ -49,10 +49,13 @@ public class SignupActivity extends AppCompatActivity {
                 // Check if the password Length meets the min length requirement
                 Toast.makeText(SignupActivity.this, "Please Enter a password 8 Characters Long ", Toast.LENGTH_SHORT).show();
 
+
+                // If password = confirm password check if Email is valid and let user into MainActivity.
+
                 } else {
                     if (password.equals(confirmPassword)) {
                         boolean checkUserEmail = databaseHelper.checkEmail(email);
-
+                // 
                         if (!checkUserEmail) {
                             boolean insert = databaseHelper.InsertData(email, password);
 
@@ -72,6 +75,8 @@ public class SignupActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // When Signup text is pressed the intent to start a Loginpactivity is intialized.
 
         binding.loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override

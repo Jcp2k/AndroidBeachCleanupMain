@@ -10,7 +10,7 @@ import com.google.android.gms.maps.model.Marker;
 
 public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
-
+// Set the context of the MyInfoWindow adapter.
     Context context;
     public MyInfoWindowAdapter(Context context){
         this.context = context;
@@ -19,13 +19,14 @@ public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
     {
     }
 
-
+// getInfoContents null, not in use.
     @Override
     public View getInfoContents(Marker marker) {
         return null;
     }
 
 
+   // Call infoWindow to marker from on press in MapFragment, find the title/snipp of the marker and display.
     @Override
     public View getInfoWindow(Marker marker) {
         View infoView = LayoutInflater.from(context).inflate(R.layout.custom_info, null);
@@ -34,7 +35,12 @@ public class MyInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
         title.setText(marker.getTitle());
         snipp.setText(marker.getSnippet());
 
+
+    // Store pollution status in Marker itself
+
         String pollutionStatus =(String) marker.getTag();
+
+        // Switch marker colour depending on pollution status.
 
         switch (pollutionStatus) {
             case "High":

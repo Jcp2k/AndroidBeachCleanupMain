@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
                             }
                             break;
                         case 1:
-                            // Task 2: Clear cached data or other resources (example)
+                            // Task 2: Clear cached data
                             // Clear cache or other resources here
                             break;
                         case 2:

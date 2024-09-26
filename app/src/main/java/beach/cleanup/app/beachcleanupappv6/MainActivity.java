@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
             }else if (item.getItemId() == R.id.map) {
                 replaceFragment(new MapFragment());
                 return true;
+
+            }else if (item.getItemId() == R.id.info) {
+                replaceFragment(new InformationFragment());
+                return true;
             }
             return false;
         });

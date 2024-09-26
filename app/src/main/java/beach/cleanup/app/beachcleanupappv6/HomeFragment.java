@@ -45,7 +45,6 @@ public class HomeFragment extends Fragment {
                             break;
                         case 1:
                             // Task 2: Clear cached data
-                            // Clear cache or other resources here
                             break;
                         case 2:
                             // Task 3: Redirect to login activity
